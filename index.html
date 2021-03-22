@@ -350,7 +350,7 @@ simpoWebsiteHelpers.onReady(function(){
     xhr.send(JSON.stringify(user));
     xhr.onload = function() {
       zapierHook(user.email, "got redirect url: " + xhr.response.redirectUrl, function() {
-      		var redirect = '/free-trial-redirect?redirect=' + encodeURIComponent(xhr.response.redirectUrl);
+      		var redirect = 'https://www.simpo.com/free-trial-redirect?redirect=' + encodeURIComponent(xhr.response.redirectUrl);
           // if embedded, redirect parent
           if (top.location != self.location){
             top.location = redirect;
