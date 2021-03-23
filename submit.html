@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+<script type="text/javascript">
+	
+    var redirect = 'https://www.simpo.com/free-trial' + window.location.search;
+    // if embedded, redirect parent
+    if (top.location != self.location){
+      top.location = redirect;
+    }else{
+      window.location.href = redirect;
+    }
+
+</script>
+</body>
+</html>
