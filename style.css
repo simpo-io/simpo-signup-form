@@ -449,6 +449,7 @@ label {
     display: block; 
     margin-bottom: 5px; 
     padding-left: 20px;
+    cursor: pointer;
 } 
 
 .checkbox-field { 

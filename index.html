@@ -37,11 +37,10 @@
                 <input type="tel" class="text-field w-node-c6a9f95c-bc27-177a-69eb-3865409c6d33-409c6d1b w-input" maxlength="256" name="phone" data-name="phone" placeholder="Phone number (optional)" id="Phone-number">
               </div>
               <label class="w-checkbox checkbox-field">
-                <div class="w-checkbox-input w-checkbox-input--inputType-custom checkbox">
+                <div class="w-checkbox-input w-checkbox-input--inputType-custom checkbox clickable-terms">
                 </div>
-                <input type="checkbox" id="Checkbox" name="Checkbox-2" data-name="Checkbox 2" style="opacity:0;position:absolute;z-index:-1">
                 <span class="w-form-label">
-                  <span class="gray-text-span">
+                  <span class="gray-text-span clickable-terms">
                     I agree to the 
                   </span>
                   <a href="https://www.simpo.com/legal/terms-of-use" target="_blank" class="link underlined-link">
@@ -49,7 +48,7 @@
                       Terms of Use
                     </span>
                   </a>
-                  <span class="gray-text-span">
+                  <span class="gray-text-span clickable-terms">
                     and 
                   </span>
                   <a href="https://www.simpo.com/legal/privacy-policy" target="_blank" class="link underlined-link">
@@ -84,18 +83,20 @@
   </div>
 
   <script>
-    document.querySelector(".checkbox-field").addEventListener("click", function(e){
-      e.stopPropagation();
-      e.preventDefault();
+    document.querySelectorAll(".clickable-terms").forEach(function(element){
+      element.addEventListener("click", function(e){
+        e.stopPropagation();
+        e.preventDefault();
 
-      if(document.querySelector('.w-checkbox-checked')){
-        document.querySelector(".w-checkbox-input--inputType-custom").classList.remove('w-checkbox-checked');
-        document.querySelector(".next-button").classList.add('disabled-button');
+        if(document.querySelector('.w-checkbox-checked')){
+          document.querySelector(".w-checkbox-input--inputType-custom").classList.remove('w-checkbox-checked');
+          document.querySelector(".next-button").classList.add('disabled-button');
 
-      }else{
-        document.querySelector(".w-checkbox-input--inputType-custom").classList.add('w-checkbox-checked');
-        document.querySelector(".next-button").classList.remove('disabled-button');
-      }
+        }else{
+          document.querySelector(".w-checkbox-input--inputType-custom").classList.add('w-checkbox-checked');
+          document.querySelector(".next-button").classList.remove('disabled-button');
+        }
+      });
     });
 
     function submitForm(){
